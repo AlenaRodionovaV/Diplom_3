@@ -7,8 +7,7 @@ from helpers.data import Urls
 @allure.step("Запустить браузер. Перейти на главную страницу Stellar Burgers. Закрыть браузер по завершении теста")
 @pytest.fixture(params=['firefox', 'chrome'], scope='function')
 def driver(request):
-    driver = None
-
+    global driver
     if request.param == 'firefox':
         driver = webdriver.Firefox()
     elif request.param == 'chrome':
